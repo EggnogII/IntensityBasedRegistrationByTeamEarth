@@ -4,6 +4,10 @@
 #include <iostream>
 
 int parseArg(std::string); //parsing function
+unsigned int numHistogramBins; //necessary to gather information from DICOM
+unsigned int numIterations;
+unsigned int multiResLevels;
+float learnRate;
 
 int main(int argc, char *argv[])
 {
