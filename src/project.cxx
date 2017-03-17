@@ -3,13 +3,15 @@
 
 #include <iostream>
 
+int parseArg(std::string); //parsing function
+
 int main(int argc, char *argv[])
 {
-	if( argc < 3 )
+	if( argc < 2 )
     {
     std::cerr << "Usage: "
               << argv[0]
-              << " InputDicomDirectory OutputDicomDirectory [series]"
+              << " InputDicomDirectory"
               << std::endl;
     return EXIT_FAILURE;
     }
@@ -24,7 +26,26 @@ int main(int argc, char *argv[])
     typedef itk::ImageFileReader<InputImageType> ReaderType;
 
     ReaderType::Pointer reader = ReaderType::New();
+    
     reader->SetFileName(argv[1]);
+    std::string argFileName = argv[1];
+    parseArg(argFileName);
 	
+	return 0;
+}
+
+//UNDER CONSTRUCTION
+int parseArg(std::string argfile)
+{
+	//open argFile
+	FILE * argFile;
+	argFile = fopen(argfile.c_str(), "r");
+	if (!argFile)
+	{
+		std::cerr << "Can't open file." << std::endl;
+		return EXIT_FAILURE;
+	}
+
+	//parse file
 	return 0;
 }
