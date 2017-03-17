@@ -1,13 +1,10 @@
+#include "itkImage.h"
 #include "itkImageFileReader.h"
+#include "itkImageSeriesReader.h"
+#include "itkImageSeriesWriter.h"
 #include "itkGDCMImageIO.h"
-
+#include "itkGDCMSeriesFileNames.h"
 #include <iostream>
-
-int parseArg(std::string); //parsing function
-unsigned int numHistogramBins; //necessary to gather information from DICOM
-unsigned int numIterations;
-unsigned int multiResLevels;
-float learnRate;
 
 int main(int argc, char *argv[])
 {
@@ -26,30 +23,23 @@ int main(int argc, char *argv[])
 
     typedef itk::Image<InputPixelType, InputDimension> InputImageType;
 
+
+    typedef itk::GDCMImageIO ImageIOType;
+    typedef itk::GDCMSeriesFileNames InputNamesGeneratorType;
+    typedef itk::ImageSeriesReader<InputImageType> ReaderType;
+
+
     //read
-    typedef itk::ImageFileReader<InputImageType> ReaderType;
+    ImageIOType::Pointer gdcmIO = ImageIOType::New();
+    InputNamesGeneratorType::Pointer inputNames = InputNamesGeneratorType::New();
+    inputNames->SetInputDirectory(argv[1]);
 
-    ReaderType::Pointer reader = ReaderType::New();
-    
-    reader->SetFileName(argv[1]);
-    std::string argFileName = argv[1];
-    parseArg(argFileName);
+    const ReaderType::FileNamesContainer &filenames = inputNames->GetInputFileNames();
+
+    ReaderType::Pointer reader  = ReaderType::New();
+    reader->SetImageIO(gdcmIO);
+    reader->SetFileNames(filenames);
+
 	
-	return 0;
-}
-
-//UNDER CONSTRUCTION
-int parseArg(std::string argfile)
-{
-	//open argFile
-	FILE * argFile;
-	argFile = fopen(argfile.c_str(), "r");
-	if (!argFile)
-	{
-		std::cerr << "Can't open file." << std::endl;
-		return EXIT_FAILURE;
-	}
-
-	//parse file
 	return 0;
 }

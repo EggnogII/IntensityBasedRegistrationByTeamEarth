@@ -8,6 +8,7 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/bin/Modules/Core/Common/ITKIOImageBaseExport.h
  /home/bees/ITK/bin/Modules/Core/Common/itkConfigure.h
  /home/bees/ITK/bin/Modules/IO/ImageBase/itkIOConfigure.h
+ /home/bees/ITK/bin/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmConfigure.h
  /home/bees/ITK/bin/Modules/ThirdParty/KWIML/src/itk_kwiml.h
  /home/bees/ITK/bin/Modules/ThirdParty/KWSys/src/itksys/Configure.h
  /home/bees/ITK/bin/Modules/ThirdParty/KWSys/src/itksys/Configure.hxx
@@ -32,6 +33,7 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkAtomicInt.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkAtomicIntDetail.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkBinaryOperationConcept.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkCommand.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkConceptChecking.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkContinuousIndex.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkCovariantVector.h
@@ -57,14 +59,28 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkFloatTypes.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImage.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImage.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageAlgorithm.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageAlgorithm.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageBase.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageBase.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageBoundaryCondition.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageConstIterator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageConstIterator.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageHelper.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageIORegion.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageIterator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageIterator.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegion.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegion.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionConstIterator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionConstIterator.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionIterator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionIterator.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionSplitterBase.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageScanlineConstIterator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageScanlineConstIterator.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageScanlineIterator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageScanlineIterator.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageSource.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageSource.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageSourceCommon.h
@@ -86,6 +102,8 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkMatrix.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMatrix.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataDictionary.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObject.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObject.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObjectBase.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMetaProgrammingLibrary.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMultiThreader.h
@@ -115,6 +133,7 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkPoint.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkPoint.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkProcessObject.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkProgressReporter.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkPromoteType.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkRGBAPixel.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkRGBAPixel.hxx
@@ -154,13 +173,68 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkWindows.h
  /home/bees/ITK/src/Modules/Core/Common/include/itk_compiler_detection.h
  /home/bees/ITK/src/Modules/IO/GDCM/include/itkGDCMImageIO.h
+ /home/bees/ITK/src/Modules/IO/GDCM/include/itkGDCMSeriesFileNames.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.hxx
+ /home/bees/ITK/src/Modules/IO/ImageBase/include/itkIOCommon.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileReader.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileReader.hxx
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileReaderException.h
+ /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileWriter.h
+ /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileWriter.hxx
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageIOBase.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageIOFactory.h
+ /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesReader.h
+ /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesReader.hxx
+ /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesWriter.h
+ /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesWriter.hxx
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmException.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmLegacyMacro.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmObject.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmSmartPointer.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmStaticAssert.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmString.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmSwapCode.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmSwapper.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmSwapper.txx
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmSystem.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmTrace.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmTypes.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmWin32.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmBasicOffsetTable.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmByteSwapFilter.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmByteValue.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmDataElement.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmDataSet.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmDataSet.txx
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmElement.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmExplicitDataElement.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmExplicitDataElement.txx
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmFile.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmFileMetaInformation.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmFragment.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmImplicitDataElement.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmImplicitDataElement.txx
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmItem.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmItem.txx
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmMediaStorage.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmParseException.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmPreamble.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmPrivateTag.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmSequenceOfFragments.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmSequenceOfItems.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmSequenceOfItems.txx
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmTag.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmTagToVR.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmTransferSyntax.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmVL.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmVM.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmVR.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmValue.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmValue.txx
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmValueIO.h
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmValueIO.txx
+ /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/MediaStorageAndFileFormat/gdcmSerieHelper.h
  /home/bees/ITK/src/Modules/ThirdParty/KWIML/src/itkkwiml/abi.h
  /home/bees/ITK/src/Modules/ThirdParty/KWIML/src/itkkwiml/include/kwiml/abi.h
  /home/bees/ITK/src/Modules/ThirdParty/KWIML/src/itkkwiml/include/kwiml/int.h
