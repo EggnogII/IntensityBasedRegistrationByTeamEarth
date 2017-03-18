@@ -4,11 +4,11 @@
 CMakeFiles/project.dir/project.cxx.o
  /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/project.cxx
  /home/bees/ITK/bin/Modules/Core/Common/ITKCommonExport.h
- /home/bees/ITK/bin/Modules/Core/Common/ITKIOGDCMExport.h
  /home/bees/ITK/bin/Modules/Core/Common/ITKIOImageBaseExport.h
+ /home/bees/ITK/bin/Modules/Core/Common/ITKOptimizersExport.h
+ /home/bees/ITK/bin/Modules/Core/Common/ITKTransformExport.h
  /home/bees/ITK/bin/Modules/Core/Common/itkConfigure.h
  /home/bees/ITK/bin/Modules/IO/ImageBase/itkIOConfigure.h
- /home/bees/ITK/bin/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmConfigure.h
  /home/bees/ITK/bin/Modules/ThirdParty/KWIML/src/itk_kwiml.h
  /home/bees/ITK/bin/Modules/ThirdParty/KWSys/src/itksys/Configure.h
  /home/bees/ITK/bin/Modules/ThirdParty/KWSys/src/itksys/Configure.hxx
@@ -30,16 +30,30 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/compilers/ITK_COMPILER_INFO_UNKNOWN_CXX.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkArray.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkArray.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkArray2D.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkArray2D.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkAtomicInt.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkAtomicIntDetail.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkBSplineDerivativeKernelFunction.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkBSplineInterpolationWeightFunction.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkBSplineInterpolationWeightFunction.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkBSplineKernelFunction.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkBinaryOperationConcept.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkBoundingBox.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkBoundingBox.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkCommand.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkConceptChecking.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkConstNeighborhoodIterator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkConstNeighborhoodIterator.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkConstSliceIterator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkContinuousIndex.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkCovariantVector.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkCovariantVector.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkCreateObjectFunction.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkCrossHelper.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkDataObject.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkDataObjectDecorator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkDataObjectDecorator.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkDataObjectIterator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkDefaultConvertPixelTraits.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkDefaultPixelAccessor.h
@@ -57,6 +71,9 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkFixedArray.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkFixedArray.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkFloatTypes.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkFunctionBase.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkGaussianOperator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkGaussianOperator.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImage.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImage.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageAlgorithm.h
@@ -66,17 +83,33 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageBoundaryCondition.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageConstIterator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageConstIterator.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageConstIteratorWithIndex.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageConstIteratorWithIndex.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageHelper.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageIORegion.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageIterator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageIterator.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageIteratorWithIndex.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageIteratorWithIndex.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageLinearConstIteratorWithIndex.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageLinearConstIteratorWithIndex.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageLinearIteratorWithIndex.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageLinearIteratorWithIndex.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRandomConstIteratorWithIndex.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRandomConstIteratorWithIndex.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegion.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegion.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionConstIterator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionConstIterator.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionConstIteratorWithIndex.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionConstIteratorWithIndex.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionIterator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionIterator.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionIteratorWithIndex.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionIteratorWithIndex.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionSplitterBase.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionSplitterDirection.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageRegionSplitterSlowDimension.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageScanlineConstIterator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageScanlineConstIterator.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageScanlineIterator.h
@@ -84,16 +117,24 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageSource.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageSource.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageSourceCommon.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageToImageFilter.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageToImageFilter.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageToImageFilterCommon.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkImageToImageFilterDetail.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImageTransformHelper.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImportImageContainer.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkImportImageContainer.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkInPlaceImageFilter.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkInPlaceImageFilter.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkIndent.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkIndex.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkInputDataObjectIterator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkIntTypes.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkIsBaseOf.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkIsConvertible.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkIsNumber.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkIsSame.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkKernelFunctionBase.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkLightObject.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkLightProcessObject.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMacro.h
@@ -101,6 +142,7 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkMathDetail.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMatrix.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMatrix.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkMersenneTwisterRandomVariateGenerator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataDictionary.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObject.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObject.hxx
@@ -112,7 +154,15 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhood.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhood.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhoodAccessorFunctor.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhoodAlgorithm.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhoodAlgorithm.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhoodAllocator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhoodInnerProduct.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhoodInnerProduct.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhoodIterator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhoodIterator.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhoodOperator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkNeighborhoodOperator.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkNumericTraits.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkNumericTraitsArrayPixel.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkNumericTraitsCovariantVectorPixel.h
@@ -128,17 +178,23 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkObjectFactory.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkObjectFactoryBase.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkOffset.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkOptimizerParameters.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkOptimizerParameters.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkOptimizerParametersHelper.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkOutputDataObjectIterator.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkOutputWindow.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkPixelTraits.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkPoint.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkPoint.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkProcessObject.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkProgressAccumulator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkProgressReporter.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkPromoteType.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkRGBAPixel.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkRGBAPixel.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkRGBPixel.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkRGBPixel.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkRandomVariateGeneratorBase.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkRealTimeInterval.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkRealTimeStamp.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkRegion.h
@@ -150,7 +206,11 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkSmartPointer.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkSmartPointerForwardReference.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkSpatialOrientation.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkSpecialCoordinatesImage.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkSpecialCoordinatesImage.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkStaticAssert.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkStreamingImageFilter.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkStreamingImageFilter.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkSymmetricEigenAnalysis.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkSymmetricEigenAnalysis.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkSymmetricSecondRankTensor.h
@@ -159,21 +219,83 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkThreadPool.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkThreadSupport.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkTimeStamp.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkTreeNode.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkTreeNode.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkUnaryFunctorImageFilter.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkUnaryFunctorImageFilter.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkVariableLengthVector.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkVariableLengthVector.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkVariableSizeMatrix.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkVariableSizeMatrix.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkVector.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkVector.hxx
+ /home/bees/ITK/src/Modules/Core/Common/include/itkVectorContainer.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkVectorContainer.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkVectorImage.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkVectorImage.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkVectorImageNeighborhoodAccessorFunctor.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkWeakPointer.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkWin32Header.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkWindows.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkZeroFluxNeumannBoundaryCondition.h
+ /home/bees/ITK/src/Modules/Core/Common/include/itkZeroFluxNeumannBoundaryCondition.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itk_compiler_detection.h
- /home/bees/ITK/src/Modules/IO/GDCM/include/itkGDCMImageIO.h
- /home/bees/ITK/src/Modules/IO/GDCM/include/itkGDCMSeriesFileNames.h
+ /home/bees/ITK/src/Modules/Core/ImageAdaptors/include/itkImageAdaptor.h
+ /home/bees/ITK/src/Modules/Core/ImageAdaptors/include/itkImageAdaptor.hxx
+ /home/bees/ITK/src/Modules/Core/ImageAdaptors/include/itkNthElementImageAdaptor.h
+ /home/bees/ITK/src/Modules/Core/ImageAdaptors/include/itkNthElementPixelAccessor.h
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkBSplineDecompositionImageFilter.h
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkBSplineDecompositionImageFilter.hxx
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkBSplineInterpolateImageFunction.h
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkBSplineInterpolateImageFunction.hxx
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkCentralDifferenceImageFunction.h
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkCentralDifferenceImageFunction.hxx
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkExtrapolateImageFunction.h
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkImageFunction.h
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkImageFunction.hxx
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkInterpolateImageFunction.h
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkLinearInterpolateImageFunction.h
+ /home/bees/ITK/src/Modules/Core/ImageFunction/include/itkLinearInterpolateImageFunction.hxx
+ /home/bees/ITK/src/Modules/Core/SpatialObjects/include/itkAffineGeometryFrame.h
+ /home/bees/ITK/src/Modules/Core/SpatialObjects/include/itkAffineGeometryFrame.hxx
+ /home/bees/ITK/src/Modules/Core/SpatialObjects/include/itkSpatialObject.h
+ /home/bees/ITK/src/Modules/Core/SpatialObjects/include/itkSpatialObject.hxx
+ /home/bees/ITK/src/Modules/Core/SpatialObjects/include/itkSpatialObjectProperty.h
+ /home/bees/ITK/src/Modules/Core/SpatialObjects/include/itkSpatialObjectProperty.hxx
+ /home/bees/ITK/src/Modules/Core/SpatialObjects/include/itkSpatialObjectTreeNode.h
+ /home/bees/ITK/src/Modules/Core/SpatialObjects/include/itkSpatialObjectTreeNode.hxx
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkAffineTransform.h
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkAffineTransform.hxx
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkBSplineBaseTransform.h
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkBSplineBaseTransform.hxx
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkIdentityTransform.h
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkMatrixOffsetTransformBase.h
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkMatrixOffsetTransformBase.hxx
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkScalableAffineTransform.h
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkScalableAffineTransform.hxx
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkTransform.h
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkTransform.hxx
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkTransformBase.h
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkTranslationTransform.h
+ /home/bees/ITK/src/Modules/Core/Transform/include/itkTranslationTransform.hxx
+ /home/bees/ITK/src/Modules/Filtering/ImageFilterBase/include/itkCastImageFilter.h
+ /home/bees/ITK/src/Modules/Filtering/ImageFilterBase/include/itkCastImageFilter.hxx
+ /home/bees/ITK/src/Modules/Filtering/ImageFilterBase/include/itkNeighborhoodOperatorImageFilter.h
+ /home/bees/ITK/src/Modules/Filtering/ImageFilterBase/include/itkNeighborhoodOperatorImageFilter.hxx
+ /home/bees/ITK/src/Modules/Filtering/ImageFilterBase/include/itkRecursiveSeparableImageFilter.h
+ /home/bees/ITK/src/Modules/Filtering/ImageFilterBase/include/itkRecursiveSeparableImageFilter.hxx
+ /home/bees/ITK/src/Modules/Filtering/ImageGradient/include/itkGradientRecursiveGaussianImageFilter.h
+ /home/bees/ITK/src/Modules/Filtering/ImageGradient/include/itkGradientRecursiveGaussianImageFilter.hxx
+ /home/bees/ITK/src/Modules/Filtering/ImageGrid/include/itkResampleImageFilter.h
+ /home/bees/ITK/src/Modules/Filtering/ImageGrid/include/itkResampleImageFilter.hxx
+ /home/bees/ITK/src/Modules/Filtering/ImageGrid/include/itkShrinkImageFilter.h
+ /home/bees/ITK/src/Modules/Filtering/ImageGrid/include/itkShrinkImageFilter.hxx
+ /home/bees/ITK/src/Modules/Filtering/ImageStatistics/include/itkStatisticsImageFilter.h
+ /home/bees/ITK/src/Modules/Filtering/ImageStatistics/include/itkStatisticsImageFilter.hxx
+ /home/bees/ITK/src/Modules/Filtering/Smoothing/include/itkDiscreteGaussianImageFilter.h
+ /home/bees/ITK/src/Modules/Filtering/Smoothing/include/itkDiscreteGaussianImageFilter.hxx
+ /home/bees/ITK/src/Modules/Filtering/Smoothing/include/itkRecursiveGaussianImageFilter.h
+ /home/bees/ITK/src/Modules/Filtering/Smoothing/include/itkRecursiveGaussianImageFilter.hxx
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.hxx
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkIOCommon.h
@@ -188,53 +310,24 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesReader.hxx
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesWriter.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesWriter.hxx
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmException.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmLegacyMacro.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmObject.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmSmartPointer.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmStaticAssert.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmString.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmSwapCode.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmSwapper.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmSwapper.txx
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmSystem.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmTrace.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmTypes.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/Common/gdcmWin32.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmBasicOffsetTable.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmByteSwapFilter.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmByteValue.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmDataElement.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmDataSet.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmDataSet.txx
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmElement.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmExplicitDataElement.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmExplicitDataElement.txx
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmFile.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmFileMetaInformation.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmFragment.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmImplicitDataElement.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmImplicitDataElement.txx
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmItem.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmItem.txx
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmMediaStorage.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmParseException.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmPreamble.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmPrivateTag.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmSequenceOfFragments.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmSequenceOfItems.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmSequenceOfItems.txx
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmTag.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmTagToVR.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmTransferSyntax.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmVL.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmVM.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmVR.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmValue.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmValue.txx
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmValueIO.h
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/DataStructureAndEncodingDefinition/gdcmValueIO.txx
- /home/bees/ITK/src/Modules/ThirdParty/GDCM/src/gdcm/Source/MediaStorageAndFileFormat/gdcmSerieHelper.h
+ /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkCostFunction.h
+ /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkCostFunction.hxx
+ /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkNonLinearOptimizer.h
+ /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkOptimizer.h
+ /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkRegularStepGradientDescentBaseOptimizer.h
+ /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkRegularStepGradientDescentOptimizer.h
+ /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkSingleValuedCostFunction.h
+ /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkSingleValuedNonLinearOptimizer.h
+ /home/bees/ITK/src/Modules/Registration/Common/include/itkImageToImageMetric.h
+ /home/bees/ITK/src/Modules/Registration/Common/include/itkImageToImageMetric.hxx
+ /home/bees/ITK/src/Modules/Registration/Common/include/itkMattesMutualInformationImageToImageMetric.h
+ /home/bees/ITK/src/Modules/Registration/Common/include/itkMattesMutualInformationImageToImageMetric.hxx
+ /home/bees/ITK/src/Modules/Registration/Common/include/itkMultiResolutionImageRegistrationMethod.h
+ /home/bees/ITK/src/Modules/Registration/Common/include/itkMultiResolutionImageRegistrationMethod.hxx
+ /home/bees/ITK/src/Modules/Registration/Common/include/itkMultiResolutionPyramidImageFilter.h
+ /home/bees/ITK/src/Modules/Registration/Common/include/itkMultiResolutionPyramidImageFilter.hxx
+ /home/bees/ITK/src/Modules/Registration/Common/include/itkRecursiveMultiResolutionPyramidImageFilter.h
+ /home/bees/ITK/src/Modules/Registration/Common/include/itkRecursiveMultiResolutionPyramidImageFilter.hxx
  /home/bees/ITK/src/Modules/ThirdParty/KWIML/src/itkkwiml/abi.h
  /home/bees/ITK/src/Modules/ThirdParty/KWIML/src/itkkwiml/include/kwiml/abi.h
  /home/bees/ITK/src/Modules/ThirdParty/KWIML/src/itkkwiml/include/kwiml/int.h
