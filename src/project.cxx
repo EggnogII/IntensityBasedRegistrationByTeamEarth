@@ -56,6 +56,8 @@ int main(int argc, char *argv[])
 
     FixedImagePyramidType::Pointer fixedImagePyramid = FixedImagePyramidType::New();
     MovingImagePyramidType::Pointer movingImagePyramid = MovingImagePyramidType::New();
+
+    std::cout << "Components initialized." << std::endl;
     
     //connect to registration object
     registration->SetTransform(transform);
@@ -64,6 +66,7 @@ int main(int argc, char *argv[])
     registration->SetFixedImagePyramid(fixedImagePyramid);
     registration->SetMovingImagePyramid(movingImagePyramid);
     
+    std::cout << "Components connected to Registration Object." << std::endl;
     //hard set the file reader to the arguments
     typedef itk::ImageFileReader<FixedImageType> FixedImageReaderType;
     typedef itk::ImageFileReader<MovingImageType> MovingImageReaderType;
@@ -74,12 +77,21 @@ int main(int argc, char *argv[])
     fixedImageReader->SetFileName(fixedImageFile);
     movingImageReader->SetFileName(movingImageFile);
 
+    std::cout << "Hard Set File Reader to args" << std::endl;
+
     //cast to internal image type
     typedef itk::CastImageFilter<FixedImageType, InternalImageType> FixedCastFilterType;
     typedef itk::CastImageFilter<MovingImageType, InternalImageType> MovingCastFilterType;
     
     FixedCastFilterType::Pointer fixedCaster = FixedCastFilterType::New();
     MovingCastFilterType::Pointer movingCaster = MovingCastFilterType::New();
+
+    std::cout << "Casting to internal image type." << std::endl;
     
+    //set output of image reader to input of caster filter.
+    //input to registration are coming from caster filter.
+    fixedCaster->SetInput(fixedImageReader->GetOutput());
+    movingCaster->SetInput(movingImageReader->GetOutput());
+
     return 0;
 }
