@@ -87,11 +87,16 @@ int main(int argc, char *argv[])
     MovingCastFilterType::Pointer movingCaster = MovingCastFilterType::New();
 
     std::cout << "Casting to internal image type." << std::endl;
-    
+
     //set output of image reader to input of caster filter.
     //input to registration are coming from caster filter.
     fixedCaster->SetInput(fixedImageReader->GetOutput());
     movingCaster->SetInput(movingImageReader->GetOutput());
+
+    registration->SetFixedImage(fixedCaster->GetOutput());
+    registration->SetMovingImage(movingCaster->GetOutput());
+
+    
 
     return 0;
 }
