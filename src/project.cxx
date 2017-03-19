@@ -1,12 +1,13 @@
 #include "itkImage.h"
 #include "itkImageFileReader.h"
+#include "itkGDCMImageIO.h"
 #include "itkImageSeriesReader.h"
 #include "itkImageSeriesWriter.h"
 #include "itkRegularStepGradientDescentOptimizer.h"
 #include "itkTranslationTransform.h"
 #include "itkMattesMutualInformationImageToImageMetric.h"
 #include "itkMultiResolutionImageRegistrationMethod.h"
-#
+#include "itkCastImageFilter.h"
 
 #include <iostream>
 
@@ -69,10 +70,16 @@ int main(int argc, char *argv[])
 
     FixedImageReaderType::Pointer fixedImageReader = FixedImageReaderType::New();
     MovingImageReaderType::Pointer movingImageReader = MovingImageReaderType::New();
-
-    //Need to consider how this will work for dcm files or if we want to use some other file format.
+   
     fixedImageReader->SetFileName(fixedImageFile);
     movingImageReader->SetFileName(movingImageFile);
-    //std::cout << "MADE IT" << std::endl;
+
+    //cast to internal image type
+    typedef itk::CastImageFilter<FixedImageType, InternalImageType> FixedCastFilterType;
+    typedef itk::CastImageFilter<MovingImageType, InternalImageType> MovingCastFilterType;
+    
+    FixedCastFilterType::Pointer fixedCaster = FixedCastFilterType::New();
+    MovingCastFilterType::Pointer movingCaster = MovingCastFilterType::New();
+    
     return 0;
 }

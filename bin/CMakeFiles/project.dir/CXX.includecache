@@ -11,6 +11,8 @@ itkImage.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkImage.h
 itkImageFileReader.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkImageFileReader.h
+itkGDCMImageIO.h
+/home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkGDCMImageIO.h
 itkImageSeriesReader.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkImageSeriesReader.h
 itkImageSeriesWriter.h
@@ -23,10 +25,14 @@ itkMattesMutualInformationImageToImageMetric.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkMattesMutualInformationImageToImageMetric.h
 itkMultiResolutionImageRegistrationMethod.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkMultiResolutionImageRegistrationMethod.h
+itkCastImageFilter.h
+/home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkCastImageFilter.h
 iostream
 -
 
 /home/bees/ITK/bin/Modules/Core/Common/ITKCommonExport.h
+
+/home/bees/ITK/bin/Modules/Core/Common/ITKIOGDCMExport.h
 
 /home/bees/ITK/bin/Modules/Core/Common/ITKIOImageBaseExport.h
 
@@ -2416,6 +2422,16 @@ itkObjectFactory.h
 itkImageLinearIteratorWithIndex.h
 /home/bees/ITK/src/Modules/Filtering/Smoothing/include/itkImageLinearIteratorWithIndex.h
 new
+-
+
+/home/bees/ITK/src/Modules/IO/GDCM/include/itkGDCMImageIO.h
+itkImageIOBase.h
+/home/bees/ITK/src/Modules/IO/GDCM/include/itkImageIOBase.h
+ITKIOGDCMExport.h
+/home/bees/ITK/src/Modules/IO/GDCM/include/ITKIOGDCMExport.h
+fstream
+-
+string
 -
 
 /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.h

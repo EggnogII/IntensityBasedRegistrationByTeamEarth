@@ -3,6 +3,7 @@
 
 CMakeFiles/project.dir/project.cxx.o: /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/project.cxx
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/bin/Modules/Core/Common/ITKCommonExport.h
+CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/bin/Modules/Core/Common/ITKIOGDCMExport.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/bin/Modules/Core/Common/ITKIOImageBaseExport.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/bin/Modules/Core/Common/ITKOptimizersExport.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/bin/Modules/Core/Common/ITKTransformExport.h
@@ -295,6 +296,7 @@ CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Filtering/Smoot
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Filtering/Smoothing/include/itkDiscreteGaussianImageFilter.hxx
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Filtering/Smoothing/include/itkRecursiveGaussianImageFilter.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Filtering/Smoothing/include/itkRecursiveGaussianImageFilter.hxx
+CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/GDCM/include/itkGDCMImageIO.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.hxx
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkIOCommon.h
