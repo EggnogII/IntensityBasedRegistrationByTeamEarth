@@ -1,6 +1,7 @@
 #include "itkImage.h"
 #include "itkImageFileReader.h"
 #include "itkGDCMImageIO.h"
+#include "itkGDCMSeriesFileNames.h"
 #include "itkImageSeriesReader.h"
 #include "itkImageSeriesWriter.h"
 #include "itkRegularStepGradientDescentOptimizer.h"
@@ -31,7 +32,7 @@ int main(int argc, char *argv[])
     //const std::string outputImageFile = argv[3];
 
     typedef itk::Image<PixelType, Dimension> FixedImageType;
-    typedef itk::Image<PixelType, Dimension> MovingImageType;
+        // typedef itk::Image<PixelType, Dimension> MovingImageType;
     
     typedef float InternalPixelType;
 
@@ -68,33 +69,69 @@ int main(int argc, char *argv[])
     
     std::cout << "Components connected to Registration Object." << std::endl;
     //hard set the file reader to the arguments
-    typedef itk::ImageFileReader<FixedImageType> FixedImageReaderType;
-    typedef itk::ImageFileReader<MovingImageType> MovingImageReaderType;
+        
+    typedef itk::ImageSeriesReader<FixedImageType> FixedImageReaderType;
+    typedef itk::GDCMSeriesFileNames MovingNamesGeneratorType;
+        //typedef itk::ImageSeriesReader<MovingImageType> MovingImageReaderType;
 
     FixedImageReaderType::Pointer fixedImageReader = FixedImageReaderType::New();
-    MovingImageReaderType::Pointer movingImageReader = MovingImageReaderType::New();
-   
-    fixedImageReader->SetFileName(fixedImageFile);
-    movingImageReader->SetFileName(movingImageFile);
+    MovingNamesGeneratorType::Pointer nameGenerator = MovingNamesGeneratorType::New();
+        //MovingImageReaderType::Pointer movingImageReader = MovingImageReaderType::New();
+    
+    typedef itk::GDCMImageIO FixedImageIOType;
+    FixedImageIOType::Pointer FixedDicomIO = FixedImageIOType::New();
+    fixedImageReader->SetImageIO(FixedDicomIO);
 
-    std::cout << "Hard Set File Reader to args" << std::endl;
 
+    /*
+        Optionally at this point we can use 
+
+        nameGenerator->SetUseSeriesDetails(true);
+        nameGenerator->AddSeriesRestriction("");
+        
+        "" denotes the restriction
+        "0020 | 0011" Series Number
+        "0018 | 0024" Sequence Name
+        "0018 | 0050" Slice Thickness
+        "0028 | 0010" Rows
+        "0028 | 0011" Columns
+    */
+    nameGenerator->SetUseSeriesDetails(true);
+    nameGenerator->AddSeriesRestriction("0008 | 0021");
+    nameGenerator->SetDirectory(argv[2]);
+
+/* Test block to see if we can see the details of the DICOM series of images */
+    
+    std::cout << "This Directory contains" << std::endl;
+    std::cout << argv[2] << std::endl;
+
+    typedef std::vector<std::string> SeriesIDContainer;
+
+    const SeriesIDContainer & seriesUID = nameGenerator->GetSeriesUIDs();
+    SeriesIDContainer::const_iterator itr = seriesUID.begin();
+    SeriesIDContainer::const_iterator end = seriesUID.end();
+    while (itr != end)
+    {
+        std::cout << itr->c_str() << std::endl;
+        ++itr;
+    }
+    
     //cast to internal image type
     typedef itk::CastImageFilter<FixedImageType, InternalImageType> FixedCastFilterType;
-    typedef itk::CastImageFilter<MovingImageType, InternalImageType> MovingCastFilterType;
+        //typedef itk::CastImageFilter<MovingImageType, InternalImageType> MovingCastFilterType;
     
     FixedCastFilterType::Pointer fixedCaster = FixedCastFilterType::New();
-    MovingCastFilterType::Pointer movingCaster = MovingCastFilterType::New();
+        //MovingCastFilterType::Pointer movingCaster = MovingCastFilterType::New();
 
     std::cout << "Casting to internal image type." << std::endl;
 
     //set output of image reader to input of caster filter.
     //input to registration are coming from caster filter.
     fixedCaster->SetInput(fixedImageReader->GetOutput());
-    movingCaster->SetInput(movingImageReader->GetOutput());
+        //movingCaster->SetInput(movingImageReader->GetOutput());
 
     registration->SetFixedImage(fixedCaster->GetOutput());
-    registration->SetMovingImage(movingCaster->GetOutput());
+        //registration->SetMovingImage(movingCaster->GetOutput());
 
     
 
