@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
     registration->SetInterpolator(interpolator);
     registration->SetFixedImagePyramid(fixedImagePyramid);
     registration->SetMovingImagePyramid(movingImagePyramid);
-    registration->SetMetric(MetricType); 
+    registration->SetMetric(metric); 
     
     std::cout << "Components connected to Registration Object." << std::endl;
     //hard set the file reader to the arguments
@@ -173,7 +173,10 @@ int main(int argc, char *argv[])
     initialParameters[2] = 0.0;  // Initial offset in mm along Z
     
     registration->SetInitialTransformParameters(initialParameters);
-    
+
+    metric->SetNumberOfHistogramBins(128);
+    metric->SetNumberOfSpatialSamples(50000); 
+    metric->ReinitializeSeed(76926294);
 
     return 0;
 }
