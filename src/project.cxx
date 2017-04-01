@@ -161,8 +161,18 @@ int main(int argc, char *argv[])
     registration->SetFixedImage(fixedCaster->GetOutput());
     registration->SetMovingImage(movingCaster->GetOutput());
 
-    
+    fixedCaster->Update();
 
+    registration->SetFixedImageRegion(fixedCaster->GetOutput()->GetBufferedRegion());
+
+    typedef RegistrationType::ParametersType ParametersType;
+    ParametersType initialParameters(transform->GetNumberOfParameters());
+
+    initialParameters[0] = 0.0;  // Initial offset in mm along X
+    initialParameters[1] = 0.0;  // Initial offset in mm along Y
+    initialParameters[2] = 0.0;  // Initial offset in mm along Z
+    
+    registration->SetInitialTransformParameters(initialParameters);
     
 
     return 0;
