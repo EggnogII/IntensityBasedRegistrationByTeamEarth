@@ -145,23 +145,33 @@ int main(int argc, char *argv[])
 
     //cast to internal image type
     typedef itk::CastImageFilter<FixedImageType, InternalImageType> FixedCastFilterType;
-        //typedef itk::CastImageFilter<MovingImageType, InternalImageType> MovingCastFilterType;
+    typedef itk::CastImageFilter<MovingImageType, InternalImageType> MovingCastFilterType;
     
     FixedCastFilterType::Pointer fixedCaster = FixedCastFilterType::New();
-        //MovingCastFilterType::Pointer movingCaster = MovingCastFilterType::New();
+    MovingCastFilterType::Pointer movingCaster = MovingCastFilterType::New();
 
     std::cout << "Casting to internal image type." << std::endl;
 
     //set output of image reader to input of caster filter.
     //input to registration are coming from caster filter.
     fixedCaster->SetInput(fixedImageReader->GetOutput());
-        //movingCaster->SetInput(movingImageReader->GetOutput());
+    movingCaster->SetInput(movingImageReader->GetOutput());
 
     registration->SetFixedImage(fixedCaster->GetOutput());
-        //registration->SetMovingImage(movingCaster->GetOutput());
+    registration->SetMovingImage(movingCaster->GetOutput());
 
+    fixedCaster->Update();
+
+    registration->SetFixedImageRegion(fixedCaster->GetOutput()->GetBufferedRegion());
+
+    typedef RegistrationType::ParametersType ParametersType;
+    ParametersType initialParameters(transform->GetNumberOfParameters());
+
+    initialParameters[0] = 0.0;  // Initial offset in mm along X
+    initialParameters[1] = 0.0;  // Initial offset in mm along Y
+    initialParameters[2] = 0.0;  // Initial offset in mm along Z
     
-
+    registration->SetInitialTransformParameters(initialParameters);
     
 
     return 0;
