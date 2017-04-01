@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     
     //component initialization
     TransformType::Pointer transform = TransformType::New();
-    OptimizerType::Pointer optimzer = OptimizerType::New();
+    OptimizerType::Pointer optimizer = OptimizerType::New();
     InterpolatorType::Pointer interpolator = InterpolatorType::New();
     RegistrationType::Pointer registration = RegistrationType::New();
     MetricType::Pointer metric = MetricType::New();
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
     
     //connect to registration object
     registration->SetTransform(transform);
-    registration->SetOptimizer(optimzer);
+    registration->SetOptimizer(optimizer);
     registration->SetInterpolator(interpolator);
     registration->SetFixedImagePyramid(fixedImagePyramid);
     registration->SetMovingImagePyramid(movingImagePyramid);
@@ -179,6 +179,8 @@ int main(int argc, char *argv[])
     metric->SetNumberOfSpatialSamples(50000); 
     metric->ReinitializeSeed(76926294);
 
-    
+    optimizer->SetNumberOfIterations(256);
+    optimizer->SetRelaxationFactor(1.0);
+
     return 0;
 }
