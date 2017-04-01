@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     //const std::string outputImageFile = argv[3];
 
     typedef itk::Image<PixelType, Dimension> FixedImageType;
-        // typedef itk::Image<PixelType, Dimension> MovingImageType;
+    typedef itk::Image<PixelType, Dimension> MovingImageType;
     
     typedef float InternalPixelType;
 
@@ -72,11 +72,11 @@ int main(int argc, char *argv[])
         
     typedef itk::ImageSeriesReader<FixedImageType> FixedImageReaderType;
     typedef itk::GDCMSeriesFileNames MovingNamesGeneratorType;
-        //typedef itk::ImageSeriesReader<MovingImageType> MovingImageReaderType;
+    typedef itk::ImageSeriesReader<MovingImageType> MovingImageReaderType;
 
     FixedImageReaderType::Pointer fixedImageReader = FixedImageReaderType::New();
     MovingNamesGeneratorType::Pointer nameGenerator = MovingNamesGeneratorType::New();
-        //MovingImageReaderType::Pointer movingImageReader = MovingImageReaderType::New();
+    MovingImageReaderType::Pointer movingImageReader = MovingImageReaderType::New();
     
     typedef itk::GDCMImageIO FixedImageIOType;
     FixedImageIOType::Pointer FixedDicomIO = FixedImageIOType::New();
@@ -102,7 +102,7 @@ int main(int argc, char *argv[])
 
 /* Test block to see if we can see the details of the DICOM series of images */
     
-    std::cout << "This Directory contains" << std::endl;
+    std::cout << "This Directory contains the series" << std::endl;
     std::cout << argv[2] << std::endl;
 
     typedef std::vector<std::string> SeriesIDContainer;
@@ -115,7 +115,34 @@ int main(int argc, char *argv[])
         std::cout << itr->c_str() << std::endl;
         ++itr;
     }
-    
+//Another Test Block
+    std::string seriesIdentifier;
+    seriesIdentifier = seriesUID.begin()->c_str();
+    std::cout << std::endl;
+    std::cout << "Reading Series: " << std::endl << std::endl;
+    std::cout << seriesIdentifier << std::endl;
+    std::cout << std::endl << std::endl;
+
+//End test block
+
+    //Read
+    typedef std::vector<std::string> FileNamesContainer;
+    FileNamesContainer fileNames;
+
+    fileNames = nameGenerator->GetFileNames(seriesIdentifier);
+    //need a 'reader' of sorts
+    movingImageReader->SetFileNames(fileNames);
+    try
+    {
+        movingImageReader->Update();
+    }
+    catch(itk::ExceptionObject &ex)
+    {
+        std::cout << ex << std::endl;
+        return EXIT_FAILURE;
+    }
+    //end reading
+
     //cast to internal image type
     typedef itk::CastImageFilter<FixedImageType, InternalImageType> FixedCastFilterType;
         //typedef itk::CastImageFilter<MovingImageType, InternalImageType> MovingCastFilterType;
