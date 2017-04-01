@@ -174,9 +174,11 @@ int main(int argc, char *argv[])
     
     registration->SetInitialTransformParameters(initialParameters);
 
+    //Metric Set
     metric->SetNumberOfHistogramBins(128);
     metric->SetNumberOfSpatialSamples(50000); 
     metric->ReinitializeSeed(76926294);
 
+    
     return 0;
 }
