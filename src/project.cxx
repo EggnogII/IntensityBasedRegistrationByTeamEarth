@@ -71,16 +71,19 @@ int main(int argc, char *argv[])
     std::cout << "Components connected to Registration Object." << std::endl;
     //hard set the file reader to the arguments
         
-    typedef itk::ImageSeriesReader<FixedImageType> FixedImageReaderType;
+    typedef itk::ImageFileReader<FixedImageType> FixedImageReaderType;
     typedef itk::GDCMSeriesFileNames MovingNamesGeneratorType;
     typedef itk::ImageSeriesReader<MovingImageType> MovingImageReaderType;
 
     FixedImageReaderType::Pointer fixedImageReader = FixedImageReaderType::New();
     MovingNamesGeneratorType::Pointer nameGenerator = MovingNamesGeneratorType::New();
     MovingImageReaderType::Pointer movingImageReader = MovingImageReaderType::New();
+
+    fixedImageReader->SetFileName(fixedImageFile);
     
     typedef itk::GDCMImageIO FixedImageIOType;
     FixedImageIOType::Pointer FixedDicomIO = FixedImageIOType::New();
+
     fixedImageReader->SetImageIO(FixedDicomIO);
 
 
@@ -104,7 +107,7 @@ int main(int argc, char *argv[])
 /* Test block to see if we can see the details of the DICOM series of images */
     
     std::cout << "This Directory contains the series" << std::endl;
-    std::cout << argv[2] << std::endl;
+    std::cout << movingImageFile << std::endl;
 
     typedef std::vector<std::string> SeriesIDContainer;
 
@@ -127,6 +130,17 @@ int main(int argc, char *argv[])
 //End test block
 
     //Read
+    try
+    {
+        fixedImageReader->Update();
+    }
+    catch(itk::ExceptionObject & e)
+    {
+        std::cerr << "Exception in Fixed File Reader " << std::endl;
+        std::cerr << e << std::endl;
+        return EXIT_FAILURE;
+    }
+
     typedef std::vector<std::string> FileNamesContainer;
     FileNamesContainer fileNames;
 
@@ -157,13 +171,19 @@ int main(int argc, char *argv[])
     //input to registration are coming from caster filter.
     fixedCaster->SetInput(fixedImageReader->GetOutput());
     movingCaster->SetInput(movingImageReader->GetOutput());
+    
+    std::cout << "Setting Readers." << std::endl;
 
     registration->SetFixedImage(fixedCaster->GetOutput());
     registration->SetMovingImage(movingCaster->GetOutput());
+    std::cout << "Connecting registration object to caster output." << std::endl;
 
     fixedCaster->Update();
+    std::cout << "Fixed Caster Update" << std::endl;
 
     registration->SetFixedImageRegion(fixedCaster->GetOutput()->GetBufferedRegion());
+
+    std::cout << "Connecting registration object to Caster Output." << std::endl;
 
     typedef RegistrationType::ParametersType ParametersType;
     ParametersType initialParameters(transform->GetNumberOfParameters());
@@ -180,7 +200,29 @@ int main(int argc, char *argv[])
     metric->ReinitializeSeed(76926294);
 
     optimizer->SetNumberOfIterations(256);
-    optimizer->SetRelaxationFactor(1.0);
+    optimizer->SetRelaxationFactor(0.9);
+
+    //If we add an Observer with Command it will be here
+
+    std::cout << "Starting Registration Process..." << std::endl;
+    //set level of Multi-Res levels
+    registration->SetNumberOfLevels(3);
+    std::cout << "Set Multi-Res Levels...." << std::endl;
+    
+    try
+    {
+        registration->Update();
+        std::cout << "Optimizer stop condition: " << registration->GetOptimizer()->GetStopConditionDescription() << std::endl;
+    }
+
+    catch(itk::ExceptionObject &err)
+    {
+        std::cout << "EXCEPTION!!!!! " << err << std::endl;
+        return EXIT_FAILURE;
+    }
+
+
+
 
     return 0;
 }
