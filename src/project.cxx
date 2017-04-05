@@ -100,11 +100,15 @@ int main(int argc, char *argv[])
         "0028 | 0010" Rows
         "0028 | 0011" Columns
     */
+  
+
     nameGenerator->SetUseSeriesDetails(true);
     nameGenerator->AddSeriesRestriction("0008 | 0021");
     nameGenerator->SetDirectory(argv[2]);
 
+
 /* Test block to see if we can see the details of the DICOM series of images */
+    
     
     std::cout << "This Directory contains the series" << std::endl;
     std::cout << movingImageFile << std::endl;
@@ -119,17 +123,20 @@ int main(int argc, char *argv[])
         std::cout << itr->c_str() << std::endl;
         ++itr;
     }
+    
 //Another Test Block
+    
     std::string seriesIdentifier;
     seriesIdentifier = seriesUID.begin()->c_str();
     std::cout << std::endl;
     std::cout << "Reading Series: " << std::endl << std::endl;
     std::cout << seriesIdentifier << std::endl;
     std::cout << std::endl << std::endl;
-
+    
 //End test block
 
-    //Read
+
+    //Read 
     try
     {
         fixedImageReader->Update();
@@ -140,13 +147,13 @@ int main(int argc, char *argv[])
         std::cerr << e << std::endl;
         return EXIT_FAILURE;
     }
-
     typedef std::vector<std::string> FileNamesContainer;
     FileNamesContainer fileNames;
 
     fileNames = nameGenerator->GetFileNames(seriesIdentifier);
-    //need a 'reader' of sorts
     movingImageReader->SetFileNames(fileNames);
+    
+
     try
     {
         movingImageReader->Update();
@@ -156,6 +163,7 @@ int main(int argc, char *argv[])
         std::cout << ex << std::endl;
         return EXIT_FAILURE;
     }
+    
     //end reading
 
     //cast to internal image type
@@ -176,7 +184,7 @@ int main(int argc, char *argv[])
 
     registration->SetFixedImage(fixedCaster->GetOutput());
     registration->SetMovingImage(movingCaster->GetOutput());
-    std::cout << "Connecting registration object to caster output." << std::endl;
+    std::cout << "Connecting registration object to Caster Output." << std::endl;
 
     fixedCaster->Update();
     std::cout << "Fixed Caster Update" << std::endl;
@@ -199,8 +207,10 @@ int main(int argc, char *argv[])
     metric->SetNumberOfSpatialSamples(50000); 
     metric->ReinitializeSeed(76926294);
 
-    optimizer->SetNumberOfIterations(256);
+    optimizer->SetNumberOfIterations(200);
     optimizer->SetRelaxationFactor(0.9);
+    optimizer->SetMaximumStepLength(16.0);
+    optimizer->SetMinimumStepLength(0.01);
 
     //If we add an Observer with Command it will be here
 
@@ -212,6 +222,9 @@ int main(int argc, char *argv[])
     try
     {
         registration->Update();
+        std::cout << optimizer->GetCurrentIteration() << " = ";
+        std::cout << optimizer->GetValue() << " : ";
+        std::cout << optimizer->GetCurrentPosition() << std::endl;
         std::cout << "Optimizer stop condition: " << registration->GetOptimizer()->GetStopConditionDescription() << std::endl;
     }
 
