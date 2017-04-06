@@ -9,8 +9,86 @@
 #include "itkMattesMutualInformationImageToImageMetric.h"
 #include "itkMultiResolutionImageRegistrationMethod.h"
 #include "itkCastImageFilter.h"
+#include "itkCommand.h"
 
 #include <iostream>
+
+template <typename TRegistration>
+class RegistrationInterfaceCommand : public itk::Command
+{
+  public:
+      typedef  RegistrationInterfaceCommand   Self;
+        typedef  itk::Command                   Superclass;
+          typedef  itk::SmartPointer<Self>        Pointer;
+            itkNewMacro( Self );
+  protected:
+              RegistrationInterfaceCommand() {};
+  public:
+                typedef   TRegistration                              RegistrationType;
+                  typedef   RegistrationType *                         RegistrationPointer;
+                    typedef   itk::RegularStepGradientDescentOptimizer   OptimizerType;
+                      typedef   OptimizerType *                            OptimizerPointer;
+                        void Execute(itk::Object * object, const itk::EventObject & event) ITK_OVERRIDE
+                              {
+                                    if( !(itk::IterationEvent().CheckEvent( &event )) )
+                                            {
+                                                    return;
+                                                          }
+                                        RegistrationPointer registration = static_cast<RegistrationPointer>( object );
+                                            if(registration == ITK_NULLPTR)
+                                                    {
+                                                            return;
+                                                                  }
+                                                OptimizerPointer optimizer = static_cast< OptimizerPointer >(registration->GetModifiableOptimizer() );
+                                                    std::cout << "-------------------------------------" << std::endl;
+                                                        std::cout << "MultiResolution Level : "
+                                                                        << registration->GetCurrentLevel()  << std::endl;
+                                                            std::cout << std::endl;
+                                                                if ( registration->GetCurrentLevel() == 0 )
+                                                                        {
+                                                                                optimizer->SetMaximumStepLength( 16.00 );
+                                                                                      optimizer->SetMinimumStepLength( 0.01 );
+                                                                                            }
+                                                                    else
+                                                                            {
+                                                                                    optimizer->SetMaximumStepLength( optimizer->GetMaximumStepLength() / 4.0 );
+                                                                                          optimizer->SetMinimumStepLength( optimizer->GetMinimumStepLength() / 10.0 );
+                                                                                                }
+                                                                        }
+                          void Execute(const itk::Object * , const itk::EventObject & ) ITK_OVERRIDE
+                                { return; }
+};
+//  The following section of code implements an observer
+//  //  that will monitor the evolution of the registration process.
+//  //
+  class CommandIterationUpdate : public itk::Command
+  {
+  public:
+    typedef  CommandIterationUpdate   Self;
+      typedef  itk::Command             Superclass;
+        typedef  itk::SmartPointer<Self>  Pointer;
+          itkNewMacro( Self );
+          protected:
+            CommandIterationUpdate() {};
+            public:
+              typedef   itk::RegularStepGradientDescentOptimizer OptimizerType;
+                typedef   const OptimizerType *                    OptimizerPointer;
+                  void Execute(itk::Object *caller, const itk::EventObject & event) ITK_OVERRIDE
+                      {
+                            Execute( (const itk::Object *)caller, event);
+                                }
+                                  void Execute(const itk::Object * object, const itk::EventObject & event) ITK_OVERRIDE
+                                      {
+                                            OptimizerPointer optimizer = static_cast< OptimizerPointer >( object );
+                                                  if( !(itk::IterationEvent().CheckEvent( &event )) )
+                                                          {
+                                                                  return;
+                                                                          }
+                                                                                std::cout << optimizer->GetCurrentIteration() << "   ";
+                                                                                      std::cout << optimizer->GetValue() << "   ";
+                                                                                            std::cout << optimizer->GetCurrentPosition() << std::endl;
+                                                                                                }
+                                                                                                };
 
 int main(int argc, char *argv[])
 {
@@ -18,7 +96,7 @@ int main(int argc, char *argv[])
     {
     std::cerr << "Usage: "
               << argv[0]
-              << "FixedImage, MovingImage"
+              << " FixedImage, MovingImage"
               << std::endl;
     return EXIT_FAILURE;
     }
@@ -40,7 +118,7 @@ int main(int argc, char *argv[])
 
     typedef itk::TranslationTransform<double, Dimension> TransformType;
     typedef itk::RegularStepGradientDescentOptimizer OptimizerType;
-	typedef itk::LinearInterpolateImageFunction<InternalImageType, double> InterpolatorType;
+    typedef itk::LinearInterpolateImageFunction<InternalImageType, double> InterpolatorType;
     typedef itk::MattesMutualInformationImageToImageMetric<InternalImageType, InternalImageType > MetricType;
     typedef itk::MultiResolutionImageRegistrationMethod<InternalImageType, InternalImageType >   RegistrationType;
 
@@ -177,19 +255,61 @@ int main(int argc, char *argv[])
 
     //set output of image reader to input of caster filter.
     //input to registration are coming from caster filter.
+    try
+    {
     fixedCaster->SetInput(fixedImageReader->GetOutput());
+    }
+
+    catch(itk::ExceptionObject &ex)
+    {
+        std::cout << ex << std::endl;
+    }
+
+    try
+    {
     movingCaster->SetInput(movingImageReader->GetOutput());
+    }
     
+    catch(itk::ExceptionObject &ex)
+    {
+    std::cout << ex << std::endl;
+    }
+
     std::cout << "Setting Readers." << std::endl;
 
+    try
+    {
     registration->SetFixedImage(fixedCaster->GetOutput());
     registration->SetMovingImage(movingCaster->GetOutput());
+    }
+
+    catch(itk::ExceptionObject &ex)
+    {
+      std::cout << "Set Fixed AND Moving Image" << ex << std::endl;
+    }
+
     std::cout << "Connecting registration object to Caster Output." << std::endl;
 
+    try
+    {
     fixedCaster->Update();
+    }
+
+    catch(itk::ExceptionObject &ex)
+    {
+      std::cout << "YO MAN" << ex << std::endl;
+    }
     std::cout << "Fixed Caster Update" << std::endl;
 
+    try
+    {
     registration->SetFixedImageRegion(fixedCaster->GetOutput()->GetBufferedRegion());
+    }
+
+    catch(itk::ExceptionObject &ex)
+    {
+    std::cout << "SET FIXED IMAGE REGION" << ex << std::endl;
+    }
 
     std::cout << "Connecting registration object to Caster Output." << std::endl;
 
@@ -200,24 +320,62 @@ int main(int argc, char *argv[])
     initialParameters[1] = 0.0;  // Initial offset in mm along Y
     initialParameters[2] = 0.0;  // Initial offset in mm along Z
     
+    try
+    {
     registration->SetInitialTransformParameters(initialParameters);
+    }
+
+    catch(itk::ExceptionObject &ex)
+    {
+    std::cout << "SET INITIAL TRANSFORM PARAMETERS" << ex << std::endl;
+    }
 
     //Metric Set
+    try
+    {
     metric->SetNumberOfHistogramBins(128);
     metric->SetNumberOfSpatialSamples(50000); 
     metric->ReinitializeSeed(76926294);
+    }
 
+    catch(itk::ExceptionObject &ex)
+    {
+      std::cout << "SET METRIC" << ex << std::endl;
+    }
+
+    try
+    {
     optimizer->SetNumberOfIterations(200);
     optimizer->SetRelaxationFactor(0.9);
     optimizer->SetMaximumStepLength(16.0);
     optimizer->SetMinimumStepLength(0.01);
+    }
 
+    catch(itk::ExceptionObject &ex)
+    {
+      std::cout << "SET Optimizer" << ex << std::endl;
+    }
+
+    
     //If we add an Observer with Command it will be here
+    CommandIterationUpdate::Pointer observer = CommandIterationUpdate::New();
+      optimizer->AddObserver( itk::IterationEvent(), observer );
+        typedef RegistrationInterfaceCommand<RegistrationType> CommandType;
+          CommandType::Pointer command = CommandType::New();
+            registration->AddObserver( itk::IterationEvent(), command );
+
 
     std::cout << "Starting Registration Process..." << std::endl;
     //set level of Multi-Res levels
+    try
+    {
     registration->SetNumberOfLevels(3);
-    std::cout << "Set Multi-Res Levels...." << std::endl;
+    }
+
+    catch(itk::ExceptionObject &ex)
+    {
+    std::cout << "Set Multi-Res Levels"<< ex << std::endl;
+    }
     
     try
     {
