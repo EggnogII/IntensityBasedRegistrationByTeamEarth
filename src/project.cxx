@@ -10,6 +10,7 @@
 #include "itkMultiResolutionImageRegistrationMethod.h"
 #include "itkCastImageFilter.h"
 
+
 #include <iostream>
 
 int main(int argc, char *argv[])
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
     {
     std::cerr << "Usage: "
               << argv[0]
-              << "FixedImage, MovingImage"
+              << " FixedImage, MovingImage"
               << std::endl;
     return EXIT_FAILURE;
     }
