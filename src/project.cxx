@@ -9,7 +9,99 @@
 #include "itkMattesMutualInformationImageToImageMetric.h"
 #include "itkMultiResolutionImageRegistrationMethod.h"
 #include "itkCastImageFilter.h"
+#include "itkCommand.h"
 
+template <typename TRegistration>
+class RegistrationInterfaceCommand : public itk::Command
+{
+public:
+    typedef RegistrationInterfaceCommand Self;
+    typedef itk::Command Superclass;
+    typedef itk::SmartPointer<Self> Pointer;
+    itkNewMacro(Self);
+
+protected:
+    RegistrationInterfaceCommand(){};
+
+public:
+    typedef TRegistration RegistrationType;
+    typedef RegistrationType * RegistrationPointer;
+    typedef itk::RegularStepGradientDescentOptimizer OptimizerType;
+    typedef OptimizerType * OptimizerPointer;
+
+    void Execute(itk::Object * object, const itk::EventObject & event) ITK_OVERRIDE
+    {
+        if (!(itk::IterationEvent().CheckEvent(&event)))
+        {
+            return;
+        }
+        RegistrationPointer registration = static_cast<RegistrationPointer>(object);
+        if (registration == ITK_NULLPTR)
+        {
+            return;
+        }
+        OptimizerPointer optimizer = static_cast<OptimizerPointer>(registration->GetModifiableOptimizer());
+
+        std::cout << "////////////////////////////////////////////////////////////////////" << std::endl;
+        std::cout << "Multi-Res Level: " << registration->GetCurrentLevel() << std::endl << std::endl;
+
+        if (registration->GetCurrentLevel == 0)
+        {
+            optimizer->SetMaximumStepLength(16.00);
+            optimizer->SetMinimumStepLength(0.01);
+        }
+
+        else
+        {
+            optimizer->SetMaximumStepLength(optimizer->GetMaximumStepLength() / 4.0);
+            optimizer->SetMinimumStepLength(optimizer->GetMinimumStepLength() / 10.0);
+        }
+
+    }
+
+    void Execute(const itk::Object *, const itk::EventObject &) ITK_OVERRIDE
+    {
+        return;
+    }
+};
+
+/*
+    OBSERVER
+*/
+
+class CommandIterationUpdate : public itk::Command
+{
+public:
+    typedef CommandIterationUpdate Self;
+    typedef itk::Command Superclass;
+    typedef itk::SmartPointer<Self> Pointer;
+    itkNewMacro(Self);
+
+protected:
+    CommandIterationUpdate() {};
+
+public:
+    typedef itk::RegularStepGradientDescentOptimizer OptimizerType;
+    typedef const OptimizerType * OptimizerPointer;
+
+    void Execute(itk::Object *caller, const itk::EventObject & event) ITK_OVERRIDE
+    {
+        Execute( (const itk::Object *)caller, event);
+    }
+
+    void Execute(const itk::Object * object, const itk::EventObject & event) ITK_OVERRIDE
+    {
+        OptimizerPointer optimizer = static_cast<OptimizerPointer>(object);
+        if (!(itk::IterationEvent().CheckEvent(&event)))
+        {
+            return;
+        }
+        std::cout << optimizer->GetCurrentIteration() << "  ";
+        std::cout << optimizer->GetValue() << "  ";
+        std::cout << optimizer->GetCurrentPosition() << std::endl;
+
+    }
+};
 
 #include <iostream>
 
@@ -65,9 +157,10 @@ int main(int argc, char *argv[])
     registration->SetTransform(transform);
     registration->SetOptimizer(optimizer);
     registration->SetInterpolator(interpolator);
+    registration->SetMetric(metric); 
     registration->SetFixedImagePyramid(fixedImagePyramid);
     registration->SetMovingImagePyramid(movingImagePyramid);
-    registration->SetMetric(metric); 
+    
     
     std::cout << "Components connected to Registration Object." << std::endl;
     //hard set the file reader to the arguments
