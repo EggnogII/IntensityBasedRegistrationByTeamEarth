@@ -45,7 +45,7 @@ public:
         std::cout << "////////////////////////////////////////////////////////////////////" << std::endl;
         std::cout << "Multi-Res Level: " << registration->GetCurrentLevel() << std::endl << std::endl;
 
-        if (registration->GetCurrentLevel == 0)
+        if (registration->GetCurrentLevel() == 0)
         {
             optimizer->SetMaximumStepLength(16.00);
             optimizer->SetMinimumStepLength(0.01);
@@ -303,10 +303,14 @@ int main(int argc, char *argv[])
 
     optimizer->SetNumberOfIterations(200);
     optimizer->SetRelaxationFactor(0.9);
-    optimizer->SetMaximumStepLength(16.0);
-    optimizer->SetMinimumStepLength(0.01);
 
     //If we add an Observer with Command it will be here
+    CommandIterationUpdate::Pointer observer = CommandIterationUpdate::New();
+    optimizer->AddObserver(itk::IterationEvent(), observer);
+
+    typedef RegistrationInterfaceCommand<RegistrationType> CommandType;
+    CommandType::Pointer command = CommandType::New();
+    registration->AddObserver(itk::IterationEvent(), command);
 
     std::cout << "Starting Registration Process..." << std::endl;
     //set level of Multi-Res levels
