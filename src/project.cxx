@@ -21,8 +21,10 @@ class RegistrationInterfaceCommand : public itk::Command
     typedef  itk::Command                   Superclass;
     typedef  itk::SmartPointer<Self>        Pointer;
     itkNewMacro( Self );
+
   protected:
     RegistrationInterfaceCommand() {};
+
   public:
     typedef   TRegistration                              RegistrationType;
     typedef   RegistrationType *                         RegistrationPointer;
@@ -330,15 +332,11 @@ int main(int argc, char *argv[])
   initialParameters[1] = 0.0;  // Initial offset in mm along Y
   initialParameters[2] = 0.0;  // Initial offset in mm along Z
 
-  try
-  {
-    registration->SetInitialTransformParameters(initialParameters);
-  }
+  transform->SetParameters( initialParameters ); 
 
-  catch(itk::ExceptionObject &ex)
-  {
-    std::cout << "SET INITIAL TRANSFORM PARAMETERS" << ex << std::endl;
-  }
+  registration->SetInitialTransformParameters( transform->GetParameters() );
+
+
 
   //Metric Set
   try
@@ -370,6 +368,7 @@ int main(int argc, char *argv[])
   //If we add an Observer with Command it will be here
   CommandIterationUpdate::Pointer observer = CommandIterationUpdate::New();
   optimizer->AddObserver( itk::IterationEvent(), observer );
+
   typedef RegistrationInterfaceCommand<RegistrationType> CommandType;
   CommandType::Pointer command = CommandType::New();
   registration->AddObserver( itk::IterationEvent(), command );
