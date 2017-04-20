@@ -281,6 +281,7 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
+    std::cout << "Registration Update Successful" << std::endl;
 
 
 
