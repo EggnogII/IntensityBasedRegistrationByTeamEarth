@@ -146,8 +146,6 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Common/include/itkMatrix.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkMersenneTwisterRandomVariateGenerator.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataDictionary.h
- /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObject.h
- /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObject.hxx
  /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObjectBase.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMetaProgrammingLibrary.h
  /home/bees/ITK/src/Modules/Core/Common/include/itkMultiThreader.h
@@ -302,7 +300,6 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/IO/GDCM/include/itkGDCMSeriesFileNames.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.hxx
- /home/bees/ITK/src/Modules/IO/ImageBase/include/itkIOCommon.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileReader.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileReader.hxx
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileReaderException.h
@@ -310,10 +307,6 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileWriter.hxx
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageIOBase.h
  /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageIOFactory.h
- /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesReader.h
- /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesReader.hxx
- /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesWriter.h
- /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesWriter.hxx
  /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkCostFunction.h
  /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkCostFunction.hxx
  /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkNonLinearOptimizer.h

@@ -145,8 +145,6 @@ CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Core/Common/inc
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Core/Common/include/itkMatrix.hxx
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Core/Common/include/itkMersenneTwisterRandomVariateGenerator.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataDictionary.h
-CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObject.h
-CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObject.hxx
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Core/Common/include/itkMetaDataObjectBase.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Core/Common/include/itkMetaProgrammingLibrary.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Core/Common/include/itkMultiThreader.h
@@ -301,7 +299,6 @@ CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/GDCM/include
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/GDCM/include/itkGDCMSeriesFileNames.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkConvertPixelBuffer.hxx
-CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkIOCommon.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileReader.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileReader.hxx
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileReaderException.h
@@ -309,10 +306,6 @@ CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/in
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageFileWriter.hxx
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageIOBase.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageIOFactory.h
-CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesReader.h
-CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesReader.hxx
-CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesWriter.h
-CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/IO/ImageBase/include/itkImageSeriesWriter.hxx
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkCostFunction.h
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkCostFunction.hxx
 CMakeFiles/project.dir/project.cxx.o: /home/bees/ITK/src/Modules/Numerics/Optimizers/include/itkNonLinearOptimizer.h

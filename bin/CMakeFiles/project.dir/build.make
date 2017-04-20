@@ -113,6 +113,7 @@ project: /home/bees/ITK/bin/lib/libITKBiasCorrection-4.11.a
 project: /home/bees/ITK/bin/lib/libITKPolynomials-4.11.a
 project: /home/bees/ITK/bin/lib/libITKBioCell-4.11.a
 project: /home/bees/ITK/bin/lib/libITKDICOMParser-4.11.a
+project: /home/bees/ITK/bin/lib/libITKDeprecated-4.11.a
 project: /home/bees/ITK/bin/lib/libitkdouble-conversion-4.11.a
 project: /home/bees/ITK/bin/lib/libITKEXPAT-4.11.a
 project: /home/bees/ITK/bin/lib/libITKFEM-4.11.a
@@ -160,6 +161,7 @@ project: /home/bees/ITK/bin/lib/libITKVTK-4.11.a
 project: /home/bees/ITK/bin/lib/libITKVideoCore-4.11.a
 project: /home/bees/ITK/bin/lib/libITKVideoIO-4.11.a
 project: /home/bees/ITK/bin/lib/libITKWatersheds-4.11.a
+project: /home/bees/ITK/bin/lib/libITKDICOMParser-4.11.a
 project: /home/bees/ITK/bin/lib/libitkgdcmMSFF-4.11.a
 project: /home/bees/ITK/bin/lib/libitkgdcmDICT-4.11.a
 project: /home/bees/ITK/bin/lib/libitkgdcmIOD-4.11.a
