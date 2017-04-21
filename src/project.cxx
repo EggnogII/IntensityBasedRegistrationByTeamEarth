@@ -130,23 +130,26 @@ public:
 
 int main(int argc, char *argv[])
 {
-    if( argc < 3 )
+    if( argc < 4 )
     {
     std::cerr << "Usage: "
               << argv[0]
-              << " FixedImage, MovingImage, OutputImage"
+              << " FixedImage, MovingImage, OutputImage, [Background Grey Level], [Checkerboard Before], [Checkerboard After]"
               << std::endl;
     return EXIT_FAILURE;
     }
 
+    typedef unsigned short PixelType;
     const std::string fixedImageDirectory = argv[1];
     const std::string movingImageDirectory = argv[2];
     const std::string outputImageFile = argv[3];
+    const PixelType backgroundGL = (argc > 4) ? atoi(argv[4]) : 100;
+    const std::string checkerboardBefore = (argc > 5) ? argv[5] : "";
+    const std::string checkerboardAfter = (argc > 6) ? argv[6] : "";
 
     //specify dimensions 
     const unsigned int Dimension = 2;
     
-    typedef unsigned short PixelType;
     typedef itk::Image<PixelType, Dimension> ImageType;
 
     typedef itk::ImageFileReader<ImageType> ReaderType;
@@ -320,7 +323,7 @@ int main(int argc, char *argv[])
     resample->SetOutputOrigin(fixedImage->GetOrigin());
     resample->SetOutputSpacing(fixedImage->GetSpacing());
     resample->SetOutputDirection(fixedImage->GetDirection());
-    resample->SetDefaultPixelValue(100); //This would be the background gray level. By default it is 100. We can set this as
+    resample->SetDefaultPixelValue(backgroundGL); //This would be the background gray level. By default it is 100. We can set this as
                                         //an argument if we want.
 
     //Writer
@@ -358,7 +361,24 @@ int main(int argc, char *argv[])
     resample->SetDefaultPixelValue(0);
 
     //Before Registration set transform identity, update output file
-    
+    TransformType::Pointer indentityTransform = TransformType::New();
+    indentityTransform->SetIdentity();
+    resample->SetTransform(indentityTransform);
 
-    return 0;
+    if (checkerboardBefore != std::string(""))
+    {
+        writer->SetFileName(checkerboardBefore);
+        writer->Update();
+    }
+
+    //After Registration
+    resample->SetTransform(finalTransform);
+    if(checkerboardAfter != std::string(""))
+    {
+        writer->SetFileName(checkerboardAfter);
+        writer->Update();
+    }
+
+
+    return EXIT_SUCCESS;
 }
