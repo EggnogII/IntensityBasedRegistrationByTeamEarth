@@ -2,8 +2,6 @@
 #include "itkImageFileReader.h"
 #include "itkGDCMImageIO.h"
 #include "itkGDCMSeriesFileNames.h"
-//#include "itkImageSeriesReader.h"
-//#include "itkImageSeriesWriter.h"
 #include "itkImageFileReader.h"
 #include "itkImageFileWriter.h"
 #include "itkRegularStepGradientDescentOptimizer.h"
@@ -274,6 +272,7 @@ int main(int argc, char *argv[])
     try
     {
         registration->Update();
+        std::cout << "Optimizer stop condition: " << registration->GetOptimizer()->GetStopConditionDescription() << std::endl;
     }
     catch(itk::ExceptionObject &e)
     {
@@ -283,7 +282,23 @@ int main(int argc, char *argv[])
 
     std::cout << "Registration Update Successful" << std::endl;
 
+    //Get Final Transform parameters
+    ParametersType finalParameters = registration->GetLastTransformParameters();
 
+    double translationX = finalParameters[0];
+    double translationY = finalParameters[1];
+
+    //Get the number of total iterations and best optimizer value
+    unsigned int numIterations = optimizer->GetCurrentIteration();
+
+    double bestValue = optimizer->GetValue();
+
+    //print the results
+    std::cout << "Result = " << std::endl;
+    std::cout << "Translation along X = " << translationX << std::endl;
+    std::cout << "Translation along Y = " << translationY << std::endl;
+    std::cout << "Iterations = " << numIterations << std::endl;
+    std::cout << "Metric Value = " << bestValue << std::endl;
 
 
     return 0;
