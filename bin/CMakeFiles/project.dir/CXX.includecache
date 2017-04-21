@@ -29,6 +29,8 @@ itkMultiResolutionImageRegistrationMethod.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkMultiResolutionImageRegistrationMethod.h
 itkCastImageFilter.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkCastImageFilter.h
+itkResampleImageFilter.h
+/home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkResampleImageFilter.h
 itkCommand.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkCommand.h
 iostream

@@ -9,6 +9,7 @@
 #include "itkMattesMutualInformationImageToImageMetric.h"
 #include "itkMultiResolutionImageRegistrationMethod.h"
 #include "itkCastImageFilter.h"
+#include "itkResampleImageFilter.h"
 #include "itkCommand.h"
 
 /*
@@ -300,6 +301,28 @@ int main(int argc, char *argv[])
     std::cout << "Iterations = " << numIterations << std::endl;
     std::cout << "Metric Value = " << bestValue << std::endl;
 
+    //Filter Process
+    typedef itk::ResampleImageFilter<ImageType, ImageType> ResampleFilterType;
+    
+    TransformType::Pointer finalTransform = TransformType::New();
+
+    finalTransform->SetParameters(finalParameters);
+    finalTransform->SetFixedParameters(transform->GetFixedParameters());
+
+    ResampleFilterType::Pointer resample = ResampleFilterType::New();
+
+    resample->SetTransform(finalTransform);
+    resample->SetInput(movingImageReader->GetOutput());
+
+    ImageType::Pointer fixedImage = fixedImageReader->GetOutput();
+
+    resample->SetSize(fixedImage->GetLargestPossibleRegion().GetSize());
+    resample->SetOutputOrigin(fixedImage->GetOrigin());
+    resample->SetOutputSpacing(fixedImage->GetSpacing());
+    resample->SetOutputDirection(fixedImage->GetDirection());
+    resample->SetDefaultPixelValue(100); //This would be the background gray level. By default it is 100. We can set this as
+                                        //an argument if we want.
+    
 
     return 0;
 }
