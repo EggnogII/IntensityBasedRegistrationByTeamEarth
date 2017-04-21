@@ -278,6 +278,8 @@ CMakeFiles/project.dir/project.cxx.o
  /home/bees/ITK/src/Modules/Core/Transform/include/itkTransformBase.h
  /home/bees/ITK/src/Modules/Core/Transform/include/itkTranslationTransform.h
  /home/bees/ITK/src/Modules/Core/Transform/include/itkTranslationTransform.hxx
+ /home/bees/ITK/src/Modules/Filtering/ImageCompare/include/itkCheckerBoardImageFilter.h
+ /home/bees/ITK/src/Modules/Filtering/ImageCompare/include/itkCheckerBoardImageFilter.hxx
  /home/bees/ITK/src/Modules/Filtering/ImageFilterBase/include/itkCastImageFilter.h
  /home/bees/ITK/src/Modules/Filtering/ImageFilterBase/include/itkCastImageFilter.hxx
  /home/bees/ITK/src/Modules/Filtering/ImageFilterBase/include/itkNeighborhoodOperatorImageFilter.h

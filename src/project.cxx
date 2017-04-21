@@ -9,6 +9,7 @@
 #include "itkMultiResolutionImageRegistrationMethod.h"
 #include "itkCastImageFilter.h"
 #include "itkResampleImageFilter.h"
+#include "itkCheckerBoardImageFilter.h"
 #include "itkCommand.h"
 
 /*
@@ -343,6 +344,21 @@ int main(int argc, char *argv[])
 
     std::cout << "Writer Update Successful" << std::endl;
 
+    //Generate the Checkerboard before and after registration
+
+    typedef itk::CheckerBoardImageFilter<ImageType> CheckerboardFilterType;
+
+    CheckerboardFilterType::Pointer checker = CheckerboardFilterType::New();
+    checker->SetInput1(fixedImage);
+    checker->SetInput2(resample->GetOutput());
+
+    caster->SetInput(checker->GetOutput());
+    writer->SetInput(caster->GetOutput());
+
+    resample->SetDefaultPixelValue(0);
+
+    //Before Registration set transform identity, update output file
+    
 
     return 0;
 }

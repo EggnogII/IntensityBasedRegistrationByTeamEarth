@@ -29,6 +29,8 @@ itkCastImageFilter.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkCastImageFilter.h
 itkResampleImageFilter.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkResampleImageFilter.h
+itkCheckerBoardImageFilter.h
+/home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkCheckerBoardImageFilter.h
 itkCommand.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkCommand.h
 iostream
@@ -2197,6 +2199,22 @@ itkMath.h
 /home/bees/ITK/src/Modules/Core/Transform/include/itkMath.h
 itkMath.h
 /home/bees/ITK/src/Modules/Core/Transform/include/itkMath.h
+
+/home/bees/ITK/src/Modules/Filtering/ImageCompare/include/itkCheckerBoardImageFilter.h
+itkImageToImageFilter.h
+/home/bees/ITK/src/Modules/Filtering/ImageCompare/include/itkImageToImageFilter.h
+itkCheckerBoardImageFilter.hxx
+/home/bees/ITK/src/Modules/Filtering/ImageCompare/include/itkCheckerBoardImageFilter.hxx
+
+/home/bees/ITK/src/Modules/Filtering/ImageCompare/include/itkCheckerBoardImageFilter.hxx
+itkCheckerBoardImageFilter.h
+/home/bees/ITK/src/Modules/Filtering/ImageCompare/include/itkCheckerBoardImageFilter.h
+itkImageRegionIteratorWithIndex.h
+/home/bees/ITK/src/Modules/Filtering/ImageCompare/include/itkImageRegionIteratorWithIndex.h
+itkObjectFactory.h
+/home/bees/ITK/src/Modules/Filtering/ImageCompare/include/itkObjectFactory.h
+itkProgressReporter.h
+/home/bees/ITK/src/Modules/Filtering/ImageCompare/include/itkProgressReporter.h
 
 /home/bees/ITK/src/Modules/Filtering/ImageFilterBase/include/itkCastImageFilter.h
 itkUnaryFunctorImageFilter.h
