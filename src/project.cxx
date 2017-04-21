@@ -1,5 +1,4 @@
 #include "itkImage.h"
-#include "itkImageFileReader.h"
 #include "itkGDCMImageIO.h"
 #include "itkGDCMSeriesFileNames.h"
 #include "itkImageFileReader.h"
@@ -134,14 +133,14 @@ int main(int argc, char *argv[])
     {
     std::cerr << "Usage: "
               << argv[0]
-              << " FixedImage, MovingImage"
+              << " FixedImage, MovingImage, OutputImage"
               << std::endl;
     return EXIT_FAILURE;
     }
 
     const std::string fixedImageDirectory = argv[1];
     const std::string movingImageDirectory = argv[2];
-    //const std::string outputImageFile = argv[3];
+    const std::string outputImageFile = argv[3];
 
     //specify dimensions 
     const unsigned int Dimension = 2;
@@ -322,7 +321,28 @@ int main(int argc, char *argv[])
     resample->SetOutputDirection(fixedImage->GetDirection());
     resample->SetDefaultPixelValue(100); //This would be the background gray level. By default it is 100. We can set this as
                                         //an argument if we want.
-    
+
+    //Writer
+    //Setting up file output
+    typedef unsigned short OutputPixelType; //will only work for shorts, not for char
+                                            //strangely enough the documentation expects 2 arguments when using a char
+    typedef itk::Image<OutputPixelType, Dimension> OutputImageType;
+
+    typedef itk::CastImageFilter<ImageType, ImageType> CastFilterType;
+
+    typedef itk::ImageFileWriter<OutputImageType> WriterType;
+
+    WriterType::Pointer writer = WriterType::New();
+    CastFilterType::Pointer caster = CastFilterType::New();
+
+    writer->SetFileName(outputImageFile);
+
+    caster->SetInput(resample->GetOutput());
+    writer->SetInput(caster->GetOutput());
+    writer->Update();
+
+    std::cout << "Writer Update Successful" << std::endl;
+
 
     return 0;
 }

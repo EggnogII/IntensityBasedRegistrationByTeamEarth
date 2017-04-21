@@ -9,8 +9,6 @@
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/project.cxx
 itkImage.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkImage.h
-itkImageFileReader.h
-/home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkImageFileReader.h
 itkGDCMImageIO.h
 /home/bees/Documents/CSC621/Homework/Project/IntensityBasedRegistrationByTeamEarth/src/itkGDCMImageIO.h
 itkGDCMSeriesFileNames.h
